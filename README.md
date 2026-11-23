@@ -8,6 +8,8 @@
 
 **Autor e personalização:** Walney Moreira Klein · **walneyk@hotmail.com**
 
+> **Estado em 23/11/2026:** a v0.4.10 inclui minimapa flutuante, redimensionável e nomes completos dos navios. O jogo completo foi entregue como ZIP na conversa de desenvolvimento, mas **os arquivos jogáveis ainda não foram enviados para este repositório**. Para publicar o ZIP sem copiar comandos manualmente, extraia-o e execute `PUBLICAR_FORK_WINDOWS.bat` de dentro da pasta extraída (Git para Windows e autenticação GitHub necessários). O script fará clone, copiará os arquivos, criará commit e enviará ao branch `main`. **Somente após esse envio o GitHub Pages terá a versão jogável.**
+
 > **Publicação em andamento:** os arquivos completos da v0.3.0 estão no pacote de distribuição. A versão do código no GitHub precisa receber os arquivos do ZIP antes de ser executável no Pages. A miniatura da logo acima já está hospedada neste repositório; a imagem original de alta resolução acompanha o pacote.
 
 ## Recursos da v0.3.0
