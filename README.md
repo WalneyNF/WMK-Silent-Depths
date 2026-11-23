@@ -1,79 +1,114 @@
 # 🌊 WMK Silent Depths — Comando Submarino
 
-![Logo oficial WMK Silent Depths](logo-wmk-silent-depths.png)
+![Logo oficial WMK Silent Depths](./logo-readme.jpg)
 
-**Simulador 3D de submarinos com sonar, carta tática, operações navais e academia de comando.**
+**Simulador 3D de submarinos com sonar, navegação, carta tática, academia de comando e hangar configurável.**
 
-**Versão:** v0.2.0 · **Idioma:** Português (Brasil) · **Plataforma:** Navegador / Windows
+**Versão preparada: v0.3.0** · **Idioma: Português (Brasil)** · **Tecnologia: HTML/CSS/JavaScript e Three.js**
 
-> A imagem acima faz parte da identidade visual oficial e será exibida automaticamente assim que o arquivo `logo-wmk-silent-depths.png` for enviado à raiz do repositório.
+**Autor e personalização:** Walney Moreira Klein · **walneyk@hotmail.com**
 
-## 🎮 Sobre o projeto
+> **Publicação em andamento:** os arquivos completos da v0.3.0 estão no pacote de distribuição. A versão do código no GitHub precisa receber os arquivos do ZIP antes de ser executável no Pages. A miniatura da logo acima já está hospedada neste repositório; a imagem original de alta resolução acompanha o pacote.
 
-O **WMK Silent Depths** desenvolve o protótipo **ABISMO — Comando Submarino** com navegação 3D, sistemas de sonar, treinamento, contatos controlados por IA, torpedos e operações fictícias. As simulações de física e acústica foram simplificadas para aprendizado e entretenimento.
+## Recursos da v0.3.0
 
-### Recursos
-- Mundo 3D criado com **Three.js**, sem Docker ou dependência de serviços externos para rodar.
-- Sonar passivo e ativo, radar e periscópio.
-- Carta tática, contatos navais e diferentes estações de comando.
-- Torpedos, mísseis e contramedidas simulados.
-- Administração de profundidade, potência, bateria, ar e integridade estrutural.
-- Missões de treinamento e modos de dificuldade.
+- Navegação 3D: potência, leme, profundidade, modo silencioso e snorkel.
+- Sonar ativo e passivo, radar, periscópio e carta tática.
+- Missões e academia de formação com cinco etapas.
+- Torpedos, mísseis e contramedidas **simulados**.
+- **Hangar de submarinos** com seleção e ficha técnica.
+- **Árvore tecnológica** por níveis e desbloqueios ligados ao progresso.
+- **Quatro submarinos fictícios configuráveis em JSON** com velocidade, limite de profundidade, munição, escala e cor.
+- Opções gráficas **F2**, contador de FPS e preferências salvas no navegador.
 - Manual interativo em português.
-- Configurações gráficas com tecla **F2**, perfis de qualidade e medidor de FPS.
 
-## 🚀 Como instalar no Windows
+### Frota inicial
 
-1. Baixe o projeto por **Code → Download ZIP** depois da publicação dos arquivos do jogo.
-2. Extraia tudo em uma pasta.
-3. Execute `INICIAR_WINDOWS.bat`.
-4. Abra o endereço indicado, geralmente `http://127.0.0.1:8765`.
+| Submarino fictício | Tipo | Disponibilidade |
+|---|---|---|
+| SSK-777 Atlântico | Diesel-elétrico | Inicial |
+| SSK-208 Arraia | Diesel-elétrico | Concluir Primeira escuta |
+| SSN-901 Tubarão | Ataque | Concluir Caçador silencioso |
+| DSV-040 Explorador | Pesquisa | Inicial |
 
-O inicializador usa Python 3 ou PHP quando disponíveis. **Sem Docker e sem npm para jogar.**
+Os modelos atuais são procedurais. Os valores são atributos fictícios para jogabilidade e não representam especificações operacionais de embarcações reais.
 
-## 🌐 GitHub Pages
+## Instalação no Windows — sem Docker
 
-O simulador é estático. Depois de enviar `index.html`, `simulator.js`, `style.css`, `graphics.js`, `vendor/three.min.js` e demais recursos, ative **Settings → Pages → Build and deployment**. O site só estará funcional quando esses arquivos forem publicados.
+1. Baixe o pacote completo do projeto.
+2. Extraia o conteúdo preservando a estrutura de pastas.
+3. Execute **`INICIAR_WINDOWS.bat`**. É necessário Python 3 ou PHP para servir os arquivos.
+4. Acesse o endereço indicado pelo inicializador, normalmente **http://127.0.0.1:8765**.
+5. Abra **Hangar e Árvore Tecnológica**, equipe um submarino e inicie uma missão.
 
-## ⌨️ Comandos
+**Importante:** os perfis de submarinos são carregados com `fetch()`; executar diretamente por `file://` pode bloquear a leitura dos JSONs. Use o servidor local.
+
+## Controles principais
 
 | Tecla | Função |
-| --- | --- |
+|---|---|
 | W / S | Potência |
 | A / D | Leme |
 | C / X | Mergulhar / subir |
 | Z | Manter profundidade |
-| L / N | Navegação silenciosa / snorkel |
-| R / I / T | Sonar ativo / classificar / marcar contato |
-| J / M | Selecionar torpedo / míssil |
-| Espaço / Enter | Disparo simulado |
+| L / N | Silêncio / snorkel |
+| R / I / T | Sonar ativo / classificar / marcar |
+| J / M | Selecionar armamento |
+| Espaço / Enter | Disparar armamento simulado |
 | G / E | Contramedida / radar |
-| 0 a 4 | Estações |
+| 0 a 4 | Postos de comando |
 | H / F2 / Esc | Manual / gráficos / pausa |
 
-## 📚 Documentação
+## Organização do pacote completo
 
-O pacote local inclui `manual.html` e `roadmap.html`. As próximas evoluções planejadas são hangar de submarinos, configurações individuais em JSON, editor de missões, painéis móveis, modelos GLB, tripulação com IA e simulação de avarias.
+```text
+WMK-Silent-Depths/
+├── index.html
+├── style.css
+├── simulator.js
+├── fleet.js
+├── graphics.js
+├── dados/submarinos/
+│   ├── catalogo.json
+│   ├── wmk-atlantico.json
+│   ├── wmk-arraia.json
+│   ├── wmk-tubarao.json
+│   └── wmk-pesquisador.json
+├── vendor/three.min.js
+├── logo-wmk-silent-depths.png
+├── capa-facebook.jpg
+├── manual.html
+├── manuais/FROTA-JSON.md
+├── roadmap.html
+├── verify.cjs
+├── INICIAR_WINDOWS.bat
+└── LICENSE
+```
 
-## 🧪 Validação
+## Testes
 
-Com Node.js instalado, execute `node verify.cjs`. O pacote local v0.2.0 passou 57 testes automatizados; os testes visuais e de desempenho no Windows ainda são necessários.
+Para testar as regras do simulador com Node.js, execute **`node verify.cjs`**. O pacote preparado passou **57 testes automatizados**; a interface ainda exige testes visuais em diferentes navegadores e computadores.
 
-## 📜 Licença MIT
+## GitHub Pages
 
-Este projeto é distribuído sob a **[Licença MIT](LICENSE)** para as partes do software cujos direitos pertencem ao autor ou cuja redistribuição é autorizada.
+Depois de publicar o código e todos os arquivos na raiz do repositório, habilite **Settings → Pages → GitHub Actions**. O workflow em `.github/workflows/pages.yml` verifica se os arquivos essenciais existem antes de publicar.
 
-A licença MIT permite **usar, copiar, modificar, distribuir e comercializar** essas partes, desde que o aviso de copyright e o texto da licença sejam mantidos.
+## Licença MIT e créditos
 
-**Atenção:** o repositório inclui código derivado do protótipo ABISMO e a biblioteca Three.js. A inclusão da licença MIT **não substitui** os direitos e avisos de terceiros. É necessário confirmar a autorização para licenciar o código-base original e preservar os avisos de dependências.
-
-### Direitos autorais e créditos
-
-**Copyright © 2026 Walney Moreira Klein**
-
-**Desenvolvimento e personalização WMK:** Walney Moreira Klein  
-**Contato:** walneyk@hotmail.com  
+**Copyright © 2026 Walney Moreira Klein**  
+**E-mail:** walneyk@hotmail.com  
 **GitHub:** [@WalneyNF](https://github.com/WalneyNF)
+
+As partes de autoria própria são disponibilizadas sob a **[Licença MIT](LICENSE)**. A licença permite usar, copiar, modificar e comercializar essas partes, desde que mantenha o texto de licença e os avisos de copyright.
+
+**Atenção:** o protótipo ABISMO e a biblioteca Three.js podem incluir direitos de terceiros. A licença adicionada aqui não altera direitos sobre código e recursos de outros titulares; devem ser preservados os avisos e verificadas as permissões aplicáveis.
+
+## Próximas versões
+
+- **v0.4.0:** Oficina Naval 3D, importação de modelos GLB e calibração.
+- **v0.5.0:** Editor de missões e mapas.
+- **v0.6.0:** Painéis móveis e postos de tripulação.
+- **v0.7.0:** Danos por compartimento e reparos.
 
 ---
 
