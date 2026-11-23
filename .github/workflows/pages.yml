@@ -1,0 +1,32 @@
+name: Publicar simulador no GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar arquivos essenciais
+        run: |
+          test -f index.html || { echo "::error::index.html não foi enviado"; exit 1; }
+          test -f simulator.js || { echo "::error::simulator.js não foi enviado"; exit 1; }
+          test -f vendor/three.min.js || { echo "::error::vendor/three.min.js não foi enviado"; exit 1; }
+          test -f logo-wmk-silent-depths.png || { echo "::error::Logo oficial não foi enviada"; exit 1; }
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
