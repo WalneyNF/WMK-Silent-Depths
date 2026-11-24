@@ -14,6 +14,10 @@
 
 
 ## 📚 Manuais e Estratégias (documentação HTML)
+### 🔎 Diagnóstico de torpedos (v0.4.23)
+
+[**Manual: corrigir e verificar lançamento de torpedos**](./manuais/estrategias/diagnostico-torpedos-v0423.html) — primeiro toque prepara o corredor, segundo tenta lançar. A versão local informa quantos objetos 3D foram realmente criados, posições, estado e motivos de bloqueio. `K` é opcional. A v0.4.23 está em um ZIP na conversa e **não está incorporada ao branch main**. O pacote inclui `PUBLICAR_FORK_WINDOWS.bat` para publicar o jogo a partir de uma máquina Windows com Git configurado.
+
 
 [**Abrir os Manuais e Estratégias**](./manuais/estrategias/index.html) — guia em português de esquadrões, preparação em dois cliques, corredor de torpedos, área de queda das bombas, salvas coletivas de foguetes, HUD de assistência, trava K, radar circular e controles. Inclui diagramas SVG autorais.
 
