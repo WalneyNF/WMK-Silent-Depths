@@ -12,6 +12,13 @@
 
 > **Publicação em andamento:** os arquivos completos da v0.3.0 estão no pacote de distribuição. A versão do código no GitHub precisa receber os arquivos do ZIP antes de ser executável no Pages. A miniatura da logo acima já está hospedada neste repositório; a imagem original de alta resolução acompanha o pacote.
 
+
+## 📚 Manuais e Estratégias (documentação HTML)
+
+[**Abrir os Manuais e Estratégias**](./manuais/estrategias/index.html) — guia em português de esquadrões, preparação em dois cliques, corredor de torpedos, área de queda das bombas, salvas coletivas de foguetes, HUD de assistência, trava K, radar circular e controles. Inclui diagramas SVG autorais.
+
+**Estado da publicação em 23/11/2026:** o manual HTML está publicado neste repositório. A atualização jogável **v0.4.20** e a galeria local de capturas/conceitos estão disponíveis no pacote ZIP da conversa, mas ainda **não foram incorporadas ao branch main**. Não confunda a documentação publicada com o executável hospedado no Pages. As imagens de terceiros não foram adicionadas ao fork sem verificação de permissão.
+
 ## Recursos da v0.3.0
 
 - Navegação 3D: potência, leme, profundidade, modo silencioso e snorkel.
