@@ -13,6 +13,13 @@
 > **Publicação em andamento:** os arquivos completos da v0.3.0 estão no pacote de distribuição. A versão do código no GitHub precisa receber os arquivos do ZIP antes de ser executável no Pages. A miniatura da logo acima já está hospedada neste repositório; a imagem original de alta resolução acompanha o pacote.
 
 
+
+## Atualização 0.4.25 — corredor paralelo (24/11/2026)
+
+O [manual HTML do corredor paralelo](./manuais/estrategias/corredor-paralelo-v0425.html) e o [módulo de referência da formação](./patches/corridor-paralelo-v0425.js) foram publicados no fork. A correção jogável do controlador, a distribuição ampliada das faixas e os testes automatizados fazem parte do ZIP completo **WMK-Silent-Depths-v0.4.25-CORREDOR-PARALELO.zip**, entregue na conversa. **O branch main ainda não contém todos os arquivos do jogo**; para subir o pacote completo, execute `PUBLICAR_FORK_WINDOWS.bat` na pasta extraída (Git autenticado necessário).
+
+**Qualidade:** a correção do corredor passou no teste de trajetórias paralelas. Bombas e foguetes foram testados com impactos fictícios em Node.js; a renderização WebGL deles no navegador ainda não foi validada. A regressão existente registra 19 testes aprovados de 24; cinco testes legados ainda falham.
+
 ## 📚 Manuais e Estratégias (documentação HTML)
 ### 🔎 Diagnóstico de torpedos (v0.4.23)
 
