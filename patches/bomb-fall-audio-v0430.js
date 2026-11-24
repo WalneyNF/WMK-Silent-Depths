@@ -1,0 +1,10 @@
+/* WMK v0.4.30 - Som de queda para bombas fictícias | Walney Moreira Klein - MIT */
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;root.WMKBombAudio=api;})(typeof window!=='undefined'?window:globalThis,function(){'use strict';
+function create(options={}){let context=null,muted=false;const tracks=new Map(),maxTracks=10;const C=options.AudioContext||((typeof window!=='undefined')&&(window.AudioContext||window.webkitAudioContext));
+function getAudio(){if(!C||muted)return null;try{context=context||new C();if(context.state==='suspended')context.resume().catch(()=>{});return context;}catch{return null;}}
+function start(shot){if(!shot||shot.kind!=='bombas'||tracks.has(shot)||tracks.size>=maxTracks)return false;const ctx=getAudio();if(!ctx)return false;try{const o=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter();o.type='sawtooth';f.type='lowpass';f.frequency.value=1100;o.frequency.value=560;g.gain.value=.0001;o.connect(f);f.connect(g);g.connect(ctx.destination);o.start();tracks.set(shot,{o,g,f,ctx,age:0});return true;}catch{return false;}}
+function stop(shot){const t=tracks.get(shot);if(!t)return;tracks.delete(shot);try{const now=t.ctx.currentTime;t.g.gain.cancelScheduledValues(now);t.g.gain.setTargetAtTime(.0001,now,.05);t.o.stop(now+.2);}catch{}}
+function update(dt){for(const [shot,t] of tracks){if(!shot||shot.y<=0||shot.splashed||shot.expired){stop(shot);continue;}t.age+=Math.max(0,dt||0);const v=Math.max(0,-Number(shot.vy||0)),drop=Math.max(0,Math.min(1,v/170)),hz=Math.max(100,560-Math.min(420,t.age*70+v*.35));try{t.o.frequency.setTargetAtTime(hz,t.ctx.currentTime,.07);t.g.gain.setTargetAtTime(muted?0:Math.min(.07,.015+.035*drop),t.ctx.currentTime,.09);t.f.frequency.setTargetAtTime(900+drop*850,t.ctx.currentTime,.15);}catch{}}}
+function stopAll(){for(const s of [...tracks.keys()])stop(s);}function setMuted(m){muted=!!m;if(muted)stopAll();return muted;}return{start,update,stop,stopAll,setMuted,isMuted:()=>muted,activeCount:()=>tracks.size};}
+return{create};
+});
