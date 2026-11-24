@@ -20,6 +20,15 @@ O [manual HTML do corredor paralelo](./manuais/estrategias/corredor-paralelo-v04
 
 **Qualidade:** a correção do corredor passou no teste de trajetórias paralelas. Bombas e foguetes foram testados com impactos fictícios em Node.js; a renderização WebGL deles no navegador ainda não foi validada. A regressão existente registra 19 testes aprovados de 24; cinco testes legados ainda falham.
 
+
+### ✅ Torpedos aprovados / próximo teste: bombas (v0.4.25)
+
+O jogador confirmou o funcionamento dos torpedos em corredor paralelo. O teste automatizado `tests/test_weapons_0425.cjs` também confirmou impacto/dano de bombas e foguetes em cenários controlados. **A renderização de bombas e foguetes ainda precisa de validação no Windows.**
+
+📖 [**Roteiro de teste dos bombardeiros**](./manuais/estrategias/teste-bombas-v0425.html).
+
+⚠ **Estado de publicação:** o patch do corredor e os manuais estão no fork, mas a versão jogável completa v0.4.25 não foi adicionada ao branch `main`. O ZIP do jogo está na conversa; não considerar o GitHub Pages atualizado até que os arquivos do ZIP sejam enviados.
+
 ## 📚 Manuais e Estratégias (documentação HTML)
 ### 🔎 Diagnóstico de torpedos (v0.4.23)
 
