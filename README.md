@@ -29,6 +29,16 @@ O jogador confirmou o funcionamento dos torpedos em corredor paralelo. O teste a
 
 ⚠ **Estado de publicação:** o patch do corredor e os manuais estão no fork, mas a versão jogável completa v0.4.25 não foi adicionada ao branch `main`. O ZIP do jogo está na conversa; não considerar o GitHub Pages atualizado até que os arquivos do ZIP sejam enviados.
 
+
+### 📦 v0.4.30 — Painéis, bombas e efeitos (pacote local)
+
+- **Código do menu de painéis:** [patch v0.4.29](./patches/wmk-panel-menu-v0429.js), com botão X, abrir/fechar e persistência.
+- **Código do áudio de bombas:** [patch v0.4.30](./patches/bomb-fall-audio-v0430.js), com som de queda e mute.
+- **Efeitos de dano:** [patch v0.4.27](./patches/impact-feedback-v0427.js), com números de HP, partículas e som.
+- **Manual de testes das bombas:** [Manuais e Estratégias v0.4.30](./manuais/estrategias/efeitos-sonoros-bombas-v0430.html).
+
+⚠ **Atenção: a versão v0.4.30 jogável completa ainda NÃO foi enviada para este repositório.** Os arquivos de patch são referências isoladas. O jogo completo está no ZIP entregue durante a conversa; para publicar todos os arquivos no `main`, execute `PUBLICAR_FORK_WINDOWS.bat` **dentro do ZIP v0.4.30 extraído**, com Git instalado e acesso autenticado. Após o push, o repositório deve conter `almirante.html`, `almirante.js`, `combat-arcade.js`, `vendor/three.min.js`, `dados/`, entre outros.
+
 ## 📚 Manuais e Estratégias (documentação HTML)
 ### 🔎 Diagnóstico de torpedos (v0.4.23)
 
